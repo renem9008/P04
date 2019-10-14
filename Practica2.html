@@ -1,0 +1,194 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Pr&aacute;ctica 2</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-09-13"><meta name="DC.source" content="Practica2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Pr&aacute;ctica 2</h1><!--introduction--><p>Integrantes del equipo</p><div><ul><li>Alarcon Camacho Aldo yosef</li><li>Islas Martinez Ceasar</li><li>Monroy Reza Rene</li><li>Ochoa Velasquez Jos&eacute; Abraham</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introduci&oacute;n</a></li><li><a href="#3">Desarrollo</a></li><li><a href="#4">Problema 1</a></li><li><a href="#5">Problema 2</a></li><li><a href="#6">Problema 3 (No se Hace)</a></li><li><a href="#7">Problema 4</a></li><li><a href="#8">Problema 5</a></li><li><a href="#9">Problema 6</a></li><li><a href="#10">Problema 7</a></li><li><a href="#11">Ap&eacute;ndice</a></li><li><a href="#12">Referencias</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Manipulaci&oacute;n B&aacute;sica de MATLAB%</li><li>Gr&aacute;ficas de se&ntilde;ales reales y complejas continuas</li><li>Transformaci&oacute;n de se&ntilde;ales contuinuas (escalamientos y traslaciones)</li><li>C&aacute;lculo de energ&iacute;a y potencia de se&ntilde;ales continuas</li></ul></div><h2 id="2">Introduci&oacute;n</h2><p><b>Breve Historia de MATLAB</b></p><p>Hoy en d&iacute;a MATLAB se trata de un entorno inform&aacute;tico t&eacute;cnico completo, pero el desarrollo de esta herramienta inici&oacute; como un simple "Laboratorio de Matrices". J. H. Wilkinson, George Forsythe, and John Todd, fueron personas que jugaron un rol importante en los origenes de MATLAB hace mas de 50 a&ntilde;os.</p><p>Wilkinson fue un matem&aacute;tico brit&aacute;nico que pas&oacute; su carrera entera en el Laboratorio Nacional de F&iacute;sica (NPL). Trabajando con una versi&oacute;n simplificada de un dise&ntilde;o sofisticado de Alan Turing, Wilkinson y sus colegas en el NPL construyeron la "Pilot Automatic Computing Engine (ACE)", una de las primeras computadoras digitales de programa almacenado de Gran Breta&ntilde;a. El Pilot ACE corri&oacute; su primer programa en Mayo de 1950. Wilkinson hizo c&aacute;lculos matriciales y pas&oacute; a convertirse en la autoridad principal del mundo en el &aacute;lgebra lineal num&eacute;rica.</p><p>Aproximadamente al mismo tiempo, matem&aacute;ticos en el Instituto para el An&aacute;lisis Num&eacute;rico (INA), una rama de National Bureau of Standards, estaban trabajando con la Standards Western Automatic Computer (SWAC), una de las primeras computadoras de USA. Investigadores en INA incluidos George Forsythe, John Todd, y Olga Taussky-Todd.</p><p>En 1967 Forsythe and Cleve Moler publicaron un libor sobre c&aacute;lculo matricial que contenia contenido de trabajo con software: programas en Algol, Fortran y PL/I para sistemas de soluci&oacute;n de ecuaciones linealis simultaneas.</p><p>En la dec&aacute;da de 1970 Investigadores en Argonne tradujeron el c&oacute;digo en Algol para el c&aacute;lculo del valor propio de una matriz del manual de Wilkinson y Reinsch en Fortran para producir EISPACK. Este fue segudi po LINPACK, un paquete de programas de Fortran para soluconar ecuaciones lineales.</p><p>El primer Fortran MATLAB era portable y pod&iacute;a ser compilado en muchas de las computadoras que estaban disponibles en los finales de 1970 y principios de 1980.</p><p>En la decada de 1980 Cleve Moler con algunos de sus etudiantes de ingenier&iacute;a unieron dos empresas de consultor&iacute;a. Estas empresas extendieron MATLAB para tener mas capacidad en el an&aacute;lisis de control y procesamiento de se&ntilde;ales,y en principios de la dec&aacute;da de 1980, ofrecieron el software resultante como productos comerciales.</p><p>Jack Little, un ingeniero de control capacitado en Standford y MIT, fue el principal desarrollador de uno de los primeros productos comerciales basado en Forran MATLAB. Cuando IMB anunci&oacute; su pirmer PC en Agosto de 1981, Jack anticip&oacute; la posibilidad de usar MATLAB y la PC para c&aacute;lculos t&eacute;cnicos. &Eacute;l y su colega Steve Bangert reprogramaron MATLAB en C y a&ntilde;adieron archivos M,toolboxes, y gr&aacute;ficos m&aacute;s potentes.</p><p>Jack Little, Steve Bangert y Cleve Moler fundaron The MathWorks en California en 1984.</p><p><b>Alternativas de Software Libre</b></p><p>es una herramienta propietaria. Sin acceso a su c&oacute;digo fuente, tiene una comprensi&oacute;n limitada de c&oacute;mo funciona y c&oacute;mo puede modificarlo. Tambi&eacute;n es prohibitivamente costoso para muchas personas fuera de un entorno acad&eacute;mico, donde las tarifasde licencia para una sola copia pueden alcanzar los miles de d&oacute;lares.</p><p>Afortunadamente existen alternativas de c&oacute;digo abierto. Aqu&iacute; hay algnas de ellas:</p><p><b>GNU Octave</b></p><p>GNU Octave puede ser la alternativa m&aacute;s conocida a MATLAB. En desarrollo activo durante casi tres d&eacute;cadas, Octave se ejecuta en Windows, Mac y Linux, y est&aacute; empaquetado para la mayor&iacute;a de las distribuciones principales. Si est&aacute; buscando un proyecto que sea lo m&aacute;s parecido posible al lenguaje MATLAB real, Octave puede ser una buena opci&oacute;n para usted; se esfuerza por una compatibilidad exacta, por lo que muchos de sus proyectos desarrollados para MATLAB pueden ejecutarse en Octave sin necesidad de modificaciones.</p><p>Para m&aacute;s informaci&oacute;n puedes visitar el sitio: <a href="https://www.gnu.org/software/octave/">GNU Octave</a></p><p><b>Scilab</b></p><p>Scilab es otra opci&oacute;n de c&oacute;digo abierto para computaci&oacute;n num&eacute;rica que se ejecuta en todas las plataformas principales: Windows, Mac y Linux incluidos. Scilab es quiz&aacute;s la alternativa m&aacute;s conocida fuera de Octave, y (como Octave) es muy similar a MATLAB en su implementaci&oacute;n, aunque la compatibilidad exacta no es un objetivo de los desarrolladores del proyecto.</p><p>Para m&aacute;s informaci&oacute;n puedes visitar el sitio: <a href="https://www.scilab.org//">Scilab</a></p><p><b>Sage</b></p><p>SageMath es otro sistema de software de matem&aacute;ticas de c&oacute;digo abierto que podr&iacute;a ser una buena opci&oacute;n para aquellos que buscan una alternativa de MATLAB. Est&aacute; construido sobre una variedad de conocidas bibliotecas de computaci&oacute;n cient&iacute;fica basadas en Python, y su propio lenguaje es sint&aacute;cticamente similar a Python. Tiene muchas caracter&iacute;sticas que incluyen una interfaz de l&iacute;nea de comandos, cuadernos basados en navegador, herramientas para incrustar f&oacute;rmulas en otros documentos y, por supuesto, muchas bibliotecas matem&aacute;ticas.</p><p>Para m&aacute;s informaci&oacute;n puedes visitar el sitio: <a href="http://www.sagemath.org/index.html">Sage</a></p><h2 id="3">Desarrollo</h2><h2 id="4">Problema 1</h2><p>C&oacute;digo %</p><h2 id="5">Problema 2</h2><h2 id="6">Problema 3 (No se Hace)</h2><h2 id="7">Problema 4</h2><h2 id="8">Problema 5</h2><h2 id="9">Problema 6</h2><h2 id="10">Problema 7</h2><p>% function Px=Potencia(T,fun,a,b) syms t; % b=escalamiento horizontal; % a=escalamiento vertical; % T=Periodo de la Funci&oacute;n original T1=T/b; f=@(t) (fun(b.*t)).^2; P=@(T0,f) (a^2)*(1/T0)*integral(f,-T0/2,T0/2); Px=P(T1,f); end</p><h2 id="11">Ap&eacute;ndice</h2><h2 id="12">Referencias</h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Práctica 2
+% Integrantes del equipo
+% 
+% * Alarcon Camacho Aldo yosef
+% * Islas Martinez Ceasar
+% * Monroy Reza Rene
+% * Ochoa Velasquez José Abraham
+%
+%% Objetivos
+%
+% * Manipulación Básica de MATLAB%
+% * Gráficas de señales reales y complejas continuas 
+% * Transformación de señales contuinuas (escalamientos y traslaciones)
+% * Cálculo de energía y potencia de señales continuas
+%
+%% Introdución
+% *Breve Historia de MATLAB* 
+%
+% Hoy en día MATLAB se trata de un entorno informático técnico completo, pero el desarrollo de esta herramienta 
+% inició como un simple "Laboratorio de Matrices". J. H. Wilkinson, George Forsythe, and John Todd, fueron personas que
+% jugaron un rol 
+% importante en los origenes de MATLAB hace mas de 50 años.
+%
+% Wilkinson fue un matemático británico que pasó su carrera entera en el
+% Laboratorio Nacional de Física (NPL).
+% Trabajando con una versión simplificada de un diseño sofisticado de Alan
+% Turing, Wilkinson y sus colegas en el NPL construyeron la "Pilot
+% Automatic Computing Engine (ACE)", una de las primeras computadoras
+% digitales de programa almacenado de Gran Bretaña. El Pilot ACE corrió su primer programa en Mayo de 1950. Wilkinson
+% hizo cálculos matriciales y pasó a convertirse en la autoridad principal
+% del mundo en el álgebra lineal numérica. 
+%
+% Aproximadamente al mismo tiempo, matemáticos en el Instituto para el Análisis Numérico (INA), una rama de National Bureau of Standards,
+% estaban trabajando con la Standards Western Automatic Computer (SWAC), una de las primeras computadoras de USA. Investigadores 
+% en INA incluidos George Forsythe, John Todd, y Olga Taussky-Todd.
+%
+% En 1967 Forsythe and Cleve Moler publicaron un libor sobre cálculo matricial que contenia   
+% contenido de trabajo con software: programas en Algol, Fortran y PL/I para sistemas de solución de ecuaciones linealis simultaneas.
+% 
+% En la decáda de 1970 Investigadores en Argonne tradujeron el código en
+% Algol para el cálculo del valor propio de una matriz del manual de Wilkinson y Reinsch en Fortran para producir EISPACK.
+% Este fue segudi po LINPACK, un paquete de programas de Fortran para
+% soluconar ecuaciones lineales.
+% 
+% El primer Fortran MATLAB era portable y podía ser compilado en muchas de
+% las computadoras que estaban disponibles en los finales de 1970 y
+% principios de 1980.
+% 
+% En la decada de 1980 Cleve Moler con algunos de sus etudiantes de
+% ingeniería unieron dos empresas de consultoría. Estas empresas extendieron MATLAB para tener mas capacidad en el análisis de control y 
+% procesamiento de señales,y en principios de la decáda de 1980, ofrecieron
+% el software resultante como productos comerciales.
+% 
+% Jack Little, un ingeniero de control capacitado en Standford y MIT, fue el principal desarrollador de uno de los primeros productos
+% comerciales basado en Forran MATLAB. Cuando IMB anunció su pirmer PC en
+% Agosto de 1981, Jack anticipó la posibilidad de usar MATLAB y la PC para
+% cálculos técnicos. Él y su colega Steve Bangert reprogramaron MATLAB en C
+% y añadieron archivos M,toolboxes, y gráficos más potentes.
+%
+% Jack Little, Steve Bangert y Cleve Moler fundaron The MathWorks en California en 1984. 
+%
+% *Alternativas de Software Libre*
+%
+% es una herramienta propietaria. Sin acceso a su código fuente, tiene una comprensión limitada de cómo funciona y 
+% cómo puede modificarlo. También es prohibitivamente costoso para muchas personas fuera de un entorno académico, donde 
+% las tarifasde licencia para una sola copia pueden alcanzar los miles de dólares.
+% 
+% Afortunadamente existen alternativas de código abierto. Aquí hay algnas
+% de ellas:
+% 
+% *GNU Octave*
+% 
+% GNU Octave puede ser la alternativa más conocida a MATLAB. En desarrollo activo durante casi tres décadas, Octave se ejecuta en 
+% Windows, Mac y Linux, y está empaquetado para la mayoría de las distribuciones principales. Si está buscando un proyecto 
+% que sea lo más parecido posible al lenguaje MATLAB real, Octave puede ser una buena opción para usted; se esfuerza por una 
+% compatibilidad exacta, por lo que muchos de sus proyectos desarrollados para MATLAB pueden ejecutarse en Octave sin necesidad 
+% de modificaciones.
+% 
+% Para más información puedes visitar el sitio: 
+% <https://www.gnu.org/software/octave/ GNU Octave>
+%
+% *Scilab*
+% 
+% Scilab es otra opción de código abierto para computación numérica que se ejecuta en todas las plataformas principales: Windows,
+% Mac y Linux incluidos. Scilab es quizás la alternativa más conocida fuera de Octave, y (como Octave) es muy similar a MATLAB en 
+% su implementación, aunque la compatibilidad exacta no es un objetivo de los desarrolladores del proyecto.
+%
+% Para más información puedes visitar el sitio: 
+% <https://www.scilab.org// Scilab>
+%
+% *Sage*
+% 
+% SageMath es otro sistema de software de matemáticas de código abierto que podría ser una buena opción para aquellos que buscan una 
+% alternativa de MATLAB. Está construido sobre una variedad de conocidas bibliotecas de computación científica basadas en Python, y su
+% propio lenguaje es sintácticamente similar a Python. Tiene muchas características que incluyen una interfaz de línea de comandos, cuadernos
+% basados en navegador, herramientas para incrustar fórmulas en otros documentos y, por supuesto, muchas bibliotecas matemáticas.
+%
+% Para más información puedes visitar el sitio: 
+% <http://www.sagemath.org/index.html Sage>
+%
+%
+%% Desarrollo
+%% Problema 1
+% Código %
+%% Problema 2
+%% Problema 3 (No se Hace)
+%% Problema 4
+%% Problema 5
+%% Problema 6
+%% Problema 7
+% % function Px=Potencia(T,fun,a,b)
+% syms t;
+% % b=escalamiento horizontal;
+% % a=escalamiento vertical;
+% % T=Periodo de la Función original 
+% T1=T/b;
+% f=@(t) (fun(b.*t)).^2;
+% P=@(T0,f) (a^2)*(1/T0)*integral(f,-T0/2,T0/2);
+% Px=P(T1,f);
+% end
+%% Apéndice
+%% Referencias
+##### SOURCE END #####
+--></body></html>
