@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Pr&aacute;ctica 4 Convoluci&oacute;n y correlaci&oacute;n</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Objetivos</a></li><li><a href="#3">Introducci&oacute;n</a></li><li><a href="#4">Teorema Fundamental del Calculo</a></li><li><a href="#7">Formulas cerradas de Newton-Cotes</a></li><li><a href="#8">Regla de simpson (n=2)</a></li><li><a href="#9">Regla de tres octavos de Simpson (n=3)</a></li><li><a href="#10">Regla compuesta del trapecio</a></li><li><a href="#11">Regla compuesta de Simpson</a></li><li><a href="#12">Cuadratura gaussiana</a></li><li><a href="#13">Ejercicio 1</a></li><li><a href="#14">Resultado analitico</a></li><li><a href="#15">Ejercicio 2</a></li><li><a href="#16">Resultado analitico</a></li><li><a href="#17">Grafica de la se&ntilde;al (c)</a></li><li><a href="#18">Grafica de la se&ntilde;al (d)</a></li><li><a href="#19">3.-Convolucion (c) con (d)</a></li><li><a href="#20">4.-Correlacion (c) con (d)</a></li><li><a href="#21">5.-Convolucion de (c) con (d) usando el comando conv de MATLAB</a></li><li><a href="#22">Referencias</a></li></ul></div><div><ul><li>Integrantes del equipo</li><li>Alarcon Camacho Aldo yosef</li><li>Monroy Reza Rene</li><li>Ochoa Velasquez Jos&eacute; Abraham</li></ul></div><h2 id="2">Objetivos</h2><div><ul><li>Manipulaci&oacute;n de instrucciones en MATLAB</li><li>Simular convoluciones y correlaciones de se&ntilde;ales continuas</li><li>Simular convoluciones y correlaciones de se&ntilde;ales discretas</li></ul></div><h2 id="3">Introducci&oacute;n</h2><p>Simulaci&oacute;n numerica de integrales</p><h2 id="4">Teorema Fundamental del Calculo</h2><p>El area definidada por la  gr&aacute;fica de la funci&oacute;n f(x). El teorema Fundamental del c&aacute;lculo (En una de sus versiones).Si f es integrable y:</p><p><img vspace="5" hspace="5" src="Ec1.png" alt=""> </p><p>Entonces</p><p><img vspace="5" hspace="5" src="Ec2.png" alt=""> </p><p>Encontrar F muchas veces es dificil o imposible, esto mediante T&eacute;cnicas de integraci&oacute;n como cambio de variable, integracion por partes, etc.</p><p>Ejemplo:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Realizar la integral de la funcion f(x)en el intervalo [-1,1]</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Como se puede observar el problema no tiene solucion con el metodo de integracion, ya que no tiene solucion usando algun metodo de integracion. Para esto usamos una aproximacion con un polinomio constante. Por ejemplo:</p><p><img vspace="5" hspace="5" src="Eq5.PNG" alt=""> </p><p>Si observamos las graficas:</p><p><img vspace="5" hspace="5" src="grafica1.png" alt=""> </p><p>El area del polinomio aproximado esta definida por la siguiente expresion</p><p><img vspace="5" hspace="5" src="Eq6.png" alt=""> </p><p>El resultado de la integral usando otros algoritmos de calculo es:</p><p><img vspace="5" hspace="5" src="Eq7.PNG" alt=""> </p><p>Finalmente , podemos concluir que es una buena aproximacion el polinomio propuesto, y que muchas veces la integracion , no es posible llevarse a cabo para ciertos casos particulares,pero podemos obtener un aproximado proponiedo polinomios aproximados a la funcion que se desea integrar.</p><h2 id="7">Formulas cerradas de Newton-Cotes</h2><p><img vspace="5" hspace="5" src="Eq8.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq9.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq10.PNG" alt=""> </p><p>Formula cerrada de (n+1) Puntos de Newton-Cotes</p><p><img vspace="5" hspace="5" src="Eq11.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq12.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq13.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq14.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq15.PNG" alt=""> </p><p>Regla del trapecio (n=1)</p><p><img vspace="5" hspace="5" src="Eq16.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq17.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq19.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq18.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq20.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq21.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq22.PNG" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Podemos usar la regla del trapecio para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq23.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq24.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq25.PNG" alt=""> </p><p>Sustituyendo en la exprecion principal obtenemos lo siguiente</p><p><img vspace="5" hspace="5" src="Eq26.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq27.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq28.PNG" alt=""> </p><h2 id="8">Regla de simpson (n=2)</h2><p><img vspace="5" hspace="5" src="Eq29.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="re.gif" alt=""> </p><p><img vspace="5" hspace="5" src="Eq35.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq36.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq37.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq38.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq39.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq40.gif" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Podemos usar la regla de simpson para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq23.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq31.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq32.PNG" alt=""> </p><p>Sustituyendo en la expresi&oacute;n principal, tenemos:</p><p><img vspace="5" hspace="5" src="Eq41.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq42.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq43.PNG" alt=""> </p><h2 id="9">Regla de tres octavos de Simpson (n=3)</h2><p><img vspace="5" hspace="5" src="Eq44.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq45.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq46.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq47.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq48.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq49.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq50.PNG" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Podemos usar la regla de simpson para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq51.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq52.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq53.PNG" alt=""> </p><p>Sustituyendo en la Expresion principal, tenemos:</p><p><img vspace="5" hspace="5" src="Eq54.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq55.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq56.PNG" alt=""> </p><h2 id="10">Regla compuesta del trapecio</h2><p><img vspace="5" hspace="5" src="Eq57.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq58.PNG" alt=""> </p><p>Numero de subTrapecios</p><p><img vspace="5" hspace="5" src="Eq59.PNG" alt=""> </p><p>Paso</p><p><img vspace="5" hspace="5" src="Eq60.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq61.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq62.PNG" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Podemos usar la regla de Trapecios compuesta para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq63.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq64.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq65.PNG" alt=""> </p><p>Sustituyendo en la expresion principal, se obtiene:</p><p><img vspace="5" hspace="5" src="Eq66.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq67.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq68.PNG" alt=""> </p><h2 id="11">Regla compuesta de Simpson</h2><p><img vspace="5" hspace="5" src="Eq69.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq70.PNG" alt=""> </p><p>n, par n&uacute;mero de subintervalos</p><p><img vspace="5" hspace="5" src="Eq59.PNG" alt=""> </p><p>Paso</p><p><img vspace="5" hspace="5" src="Eq60.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq61.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq62.PNG" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.PNG" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.PNG" alt=""> </p><p>Podemos usar la regla de simpson compuesta para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq63.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq64.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq65.PNG" alt=""> </p><p>Sustituyendo en la expresion principal</p><p><img vspace="5" hspace="5" src="Eq71.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq72.PNG" alt=""> </p><p><img vspace="5" hspace="5" src="Eq68.PNG" alt=""> </p><h2 id="12">Cuadratura gaussiana</h2><h2 id="13">Ejercicio 1</h2><p>PR04-1 Realiza la convoluci&oacute;n de las siguentes se&ntilde;ales</p><p><img src="ASySPrac4MonroyRRene_eq02524040644593194809.png" alt="$$f(t)=e^{-t}(u(t)-u(t-1))$$ y  $$g(t)=t(u(t+1)-u(t-1))$$"></p><pre class="codeinput">f=@(t) exp(-t).*(t&gt;=0 &amp; t&lt;1);
+  </style></head><body><div class="content"><h1>Pr&aacute;ctica 4 Convoluci&oacute;n y correlaci&oacute;n</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Objetivos</a></li><li><a href="#3">Introducci&oacute;n</a></li><li><a href="#4">Teorema Fundamental del Calculo</a></li><li><a href="#7">Formulas cerradas de Newton-Cotes</a></li><li><a href="#8">Regla de simpson (n=2)</a></li><li><a href="#9">Regla de tres octavos de Simpson (n=3)</a></li><li><a href="#10">Regla compuesta del trapecio</a></li><li><a href="#11">Regla compuesta de Simpson</a></li><li><a href="#12">Cuadratura gaussiana</a></li><li><a href="#13">Ejercicio 1</a></li><li><a href="#14">Resultado analitico</a></li><li><a href="#15">Ejercicio 2</a></li><li><a href="#16">Resultado analitico</a></li><li><a href="#17">Grafica de la se&ntilde;al (c)</a></li><li><a href="#18">Grafica de la se&ntilde;al (d)</a></li><li><a href="#19">3.-Convolucion (c) con (d)</a></li><li><a href="#21">4.-Correlacion (c) con (d)</a></li><li><a href="#23">5.-Convolucion de (c) con (d) usando el comando conv de MATLAB</a></li><li><a href="#24">Referencias</a></li></ul></div><div><ul><li>Integrantes del equipo</li><li>Alarcon Camacho Aldo yosef</li><li>Monroy Reza Rene</li><li>Ochoa Velasquez Jos&eacute; Abraham</li></ul></div><h2 id="2">Objetivos</h2><div><ul><li>Manipulaci&oacute;n de instrucciones en MATLAB</li><li>Simular convoluciones y correlaciones de se&ntilde;ales continuas</li><li>Simular convoluciones y correlaciones de se&ntilde;ales discretas</li></ul></div><h2 id="3">Introducci&oacute;n</h2><p>Simulaci&oacute;n numerica de integrales</p><h2 id="4">Teorema Fundamental del Calculo</h2><p>El area definidada por la  gr&aacute;fica de la funci&oacute;n f(x). El teorema Fundamental del c&aacute;lculo (En una de sus versiones).Si f es integrable y:</p><p><img vspace="5" hspace="5" src="Ec1.png" alt=""> </p><p>Entonces</p><p><img vspace="5" hspace="5" src="Ec2.png" alt=""> </p><p>Encontrar F muchas veces es dificil o imposible, esto mediante T&eacute;cnicas de integraci&oacute;n como cambio de variable, integracion por partes, etc.</p><p>Ejemplo:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Realizar la integral de la funcion f(x)en el intervalo [-1,1]</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Como se puede observar el problema no tiene solucion con el metodo de integracion, ya que no tiene solucion usando algun metodo de integracion. Para esto usamos una aproximacion con un polinomio constante. Por ejemplo:</p><p><img vspace="5" hspace="5" src="Eq5.png" alt=""> </p><p>Si observamos las graficas:</p><p><img vspace="5" hspace="5" src="grafica1.png" alt=""> </p><p>El area del polinomio aproximado esta definida por la siguiente expresion</p><p><img vspace="5" hspace="5" src="Eq6.png" alt=""> </p><p>El resultado de la integral usando otros algoritmos de calculo es:</p><p><img vspace="5" hspace="5" src="Eq7.png" alt=""> </p><p>Finalmente , podemos concluir que es una buena aproximacion el polinomio propuesto, y que muchas veces la integracion , no es posible llevarse a cabo para ciertos casos particulares,pero podemos obtener un aproximado proponiedo polinomios aproximados a la funcion que se desea integrar.</p><h2 id="7">Formulas cerradas de Newton-Cotes</h2><p><img vspace="5" hspace="5" src="Eq8.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq9.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq10.png" alt=""> </p><p>Formula cerrada de (n+1) Puntos de Newton-Cotes</p><p><img vspace="5" hspace="5" src="Eq11.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq12.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq13.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq14.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq15.png" alt=""> </p><p>Regla del trapecio (n=1)</p><p><img vspace="5" hspace="5" src="Eq16.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq17.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq19.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq18.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq20.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq21.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq22.png" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Podemos usar la regla del trapecio para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq23.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq24.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq25.png" alt=""> </p><p>Sustituyendo en la exprecion principal obtenemos lo siguiente</p><p><img vspace="5" hspace="5" src="Eq26.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq27.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq28.png" alt=""> </p><h2 id="8">Regla de simpson (n=2)</h2><p><img vspace="5" hspace="5" src="Eq29.png" alt=""> </p><p><img vspace="5" hspace="5" src="re.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq35.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq36.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq37.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq38.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq39.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq40.gif" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Podemos usar la regla de simpson para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq23.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq31.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq32.png" alt=""> </p><p>Sustituyendo en la expresi&oacute;n principal, tenemos:</p><p><img vspace="5" hspace="5" src="Eq41.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq42.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq43.png" alt=""> </p><h2 id="9">Regla de tres octavos de Simpson (n=3)</h2><p><img vspace="5" hspace="5" src="Eq44.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq45.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq46.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq47.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq48.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq49.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq50.png" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Podemos usar la regla de simpson para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq51.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq52.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq53.png" alt=""> </p><p>Sustituyendo en la Expresion principal, tenemos:</p><p><img vspace="5" hspace="5" src="Eq54.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq55.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq56.png" alt=""> </p><h2 id="10">Regla compuesta del trapecio</h2><p><img vspace="5" hspace="5" src="Eq57.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq58.png" alt=""> </p><p>Numero de subTrapecios</p><p><img vspace="5" hspace="5" src="Eq59.png" alt=""> </p><p>Paso</p><p><img vspace="5" hspace="5" src="Eq60.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq61.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq62.png" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Podemos usar la regla de Trapecios compuesta para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq63.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq64.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq65.png" alt=""> </p><p>Sustituyendo en la expresion principal, se obtiene:</p><p><img vspace="5" hspace="5" src="Eq66.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq67.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq68.png" alt=""> </p><h2 id="11">Regla compuesta de Simpson</h2><p><img vspace="5" hspace="5" src="Eq69.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq70.png" alt=""> </p><p>n, par n&uacute;mero de subintervalos</p><p><img vspace="5" hspace="5" src="Eq59.png" alt=""> </p><p>Paso</p><p><img vspace="5" hspace="5" src="Eq60.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq61.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq62.png" alt=""> </p><p>Retomando el ejemplo anterior en el que:</p><p><img vspace="5" hspace="5" src="Eq3.png" alt=""> </p><p>Y solcitabamos el calculo de:</p><p><img vspace="5" hspace="5" src="Eq4.png" alt=""> </p><p>Podemos usar la regla de simpson compuesta para hacer el calculo, en donde los valores para sustituir en la expresion principal quedan de la siguiente forma:</p><p><img vspace="5" hspace="5" src="Eq63.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq64.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq65.png" alt=""> </p><p>Sustituyendo en la expresion principal</p><p><img vspace="5" hspace="5" src="Eq71.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq72.png" alt=""> </p><p><img vspace="5" hspace="5" src="Eq68.png" alt=""> </p><h2 id="12">Cuadratura gaussiana</h2><h2 id="13">Ejercicio 1</h2><p>PR04-1 Realiza la convoluci&oacute;n de las siguentes se&ntilde;ales</p><p><img src="ASySPrac4MonroyRRene_eq02524040644593194809.png" alt="$$f(t)=e^{-t}(u(t)-u(t-1))$$ y  $$g(t)=t(u(t+1)-u(t-1))$$"></p><pre class="codeinput">f=@(t) exp(-t).*(t&gt;=0 &amp; t&lt;1);
 g=@(t) t.*(t&gt;=-1 &amp; t&lt;=1);
 convconm(f,g)
 </pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_01.png" alt=""> <h2 id="14">Resultado analitico</h2><p><img vspace="5" hspace="5" src="Ejercicio1.gif" alt=""> </p><h2 id="15">Ejercicio 2</h2><p>PR05-e Realizar la autocorrelaci&oacute;n de</p><p><img src="ASySPrac4MonroyRRene_eq13908160580881992356.png" alt="$x(t)=u(t)-2u(t-3)+u(t-4)$"></p><pre class="codeinput">k=@(t) 1*((t&gt;=0&amp;t&lt;3) - (t&gt;=3&amp;t&lt;4));
@@ -83,31 +83,17 @@ stem(n3,f2(n3),<span class="string">'LineWidth'</span>,2)
 a=[0 -9 -6 -3 0 3 6 9 0];
 b=[0 0 4 2 0 2 4 0 0];
 convdisc([n;a],[n;b])
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">% &lt;&lt;Convolucionc_d.gif&gt;&gt;</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_05.png" alt=""> <h2 id="20">4.-Correlacion (c) con (d)</h2><p>Problema 3.1.1 Lathi  recordemos que la correlacion entre  <img src="ASySPrac4MonroyRRene_eq18096895394918367257.png" alt="$f$"> y <img src="ASySPrac4MonroyRRene_eq07585311203459331132.png" alt="$g$"> es  <img src="ASySPrac4MonroyRRene_eq02927294976836192232.png" alt="$r_{fg}[n]=f[n]*g[-n]$">, entonces es posible invertir la se&ntilde;al en  (d),para hacer la operacion correspondiente,  como esta es par, no presenta ningun cambio, por lo que la correlaci&oacute;n  equivale al resultado de la convoluci&oacute;n</p><pre class="codeinput">n2=-4:4;
+</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_05.png" alt=""> <p><img vspace="5" hspace="5" src="Convolucionc_d.gif" alt=""> </p><h2 id="21">4.-Correlacion (c) con (d)</h2><p>Problema 3.1.1 Lathi  recordemos que la correlacion entre  <img src="ASySPrac4MonroyRRene_eq18096895394918367257.png" alt="$f$"> y <img src="ASySPrac4MonroyRRene_eq07585311203459331132.png" alt="$g$"> es  <img src="ASySPrac4MonroyRRene_eq02927294976836192232.png" alt="$r_{fg}[n]=f[n]*g[-n]$">, entonces es posible invertir la se&ntilde;al en  (d),para hacer la operacion correspondiente,  como esta es par, no presenta ningun cambio, por lo que la correlaci&oacute;n  equivale al resultado de la convoluci&oacute;n</p><pre class="codeinput">n2=-4:4;
 f=[0 -9 -6 -3 0 3 6 9 0];
 g=[0 0 4 2 0 2 4 0 0];
 convdisc( [n2;f], [n2;g] )
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">% &lt;&lt;Correlacionc_d.gif&gt;&gt;</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-<span class="comment">%</span>
-</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_06.png" alt=""> <h2 id="21">5.-Convolucion de (c) con (d) usando el comando conv de MATLAB</h2><pre class="codeinput">figure
+</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_06.png" alt=""> <p><img vspace="5" hspace="5" src="Correlacionc_d.gif" alt=""> </p><h2 id="23">5.-Convolucion de (c) con (d) usando el comando conv de MATLAB</h2><pre class="codeinput">figure
 c=[0 -9 -6 -3 0 3 6 9 0];
 d=[0 0 4 2 0 2 4 0 0];
 w=conv(c,d);
 n4=-8:8;
 stem(n4,w,<span class="string">'LineWidth'</span>,2)
-</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_07.png" alt=""> <h2 id="22">Referencias</h2><div><ul><li>Cleve Moler. (2004). The Origins of MATLAB. 2019, de MathWorks Sitio web: https://www.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html</li><li>maslinux. (2017). 3 Alternativas de C&oacute;digo abierto a MATLAB. 2019, de maslinux Sitio web: https://maslinux.es/3-alternativas-de-codigo-abierto-a-matlab/</li><li>B. P. Lathi, Linear systems and signals,Oxford University Press</li></ul></div><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="ASySPrac4MonroyRRene_07.png" alt=""> <h2 id="24">Referencias</h2><div><ul><li>Cleve Moler. (2004). The Origins of MATLAB. 2019, de MathWorks Sitio web: https://www.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html</li><li>maslinux. (2017). 3 Alternativas de C&oacute;digo abierto a MATLAB. 2019, de maslinux Sitio web: https://maslinux.es/3-alternativas-de-codigo-abierto-a-matlab/</li><li>B. P. Lathi, Linear systems and signals,Oxford University Press</li></ul></div><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Práctica 4 Convolución y correlación
 %%
@@ -141,11 +127,11 @@ stem(n4,w,<span class="string">'LineWidth'</span>,2)
 % Ejemplo:
 %
 % 
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Realizar la integral de la funcion f(x)en el intervalo [-1,1]
 %
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 % 
 % Como se puede observar el problema no tiene solucion con el metodo de
 % integracion, ya que no tiene solucion usando algun metodo de integracion.
@@ -154,7 +140,7 @@ stem(n4,w,<span class="string">'LineWidth'</span>,2)
 %
 %
 % 
-% <<Eq5.PNG>>
+% <<Eq5.png>>
 % 
 % Si observamos las graficas:
 %
@@ -168,7 +154,7 @@ stem(n4,w,<span class="string">'LineWidth'</span>,2)
 % 
 % El resultado de la integral usando otros algoritmos de calculo es:
 %
-% <<Eq7.PNG>>
+% <<Eq7.png>>
 % 
 % Finalmente , podemos concluir que es una buena aproximacion el polinomio
 % propuesto, y que muchas veces la integracion , no es posible llevarse
@@ -177,239 +163,239 @@ stem(n4,w,<span class="string">'LineWidth'</span>,2)
 % 
 %% Formulas cerradas de Newton-Cotes
 % 
-% <<Eq8.PNG>>
+% <<Eq8.png>>
 % 
-% <<Eq9.PNG>>
+% <<Eq9.png>>
 % 
-% <<Eq10.PNG>>
+% <<Eq10.png>>
 %
 % Formula cerrada de (n+1) Puntos de Newton-Cotes
 %
-% <<Eq11.PNG>>
+% <<Eq11.png>>
 % 
-% <<Eq12.PNG>>
+% <<Eq12.png>>
 % 
-% <<Eq13.PNG>>
+% <<Eq13.png>>
 % 
-% <<Eq14.PNG>>
+% <<Eq14.png>>
 %
-% <<Eq15.PNG>>
+% <<Eq15.png>>
 %
 % Regla del trapecio (n=1)
 %
-% <<Eq16.PNG>>   
+% <<Eq16.png>>   
 % 
-% <<Eq17.PNG>>
+% <<Eq17.png>>
 %
-% <<Eq19.PNG>>
+% <<Eq19.png>>
 %
-% <<Eq18.PNG>>
+% <<Eq18.png>>
 %
-% <<Eq20.PNG>>
+% <<Eq20.png>>
 % 
-% <<Eq21.PNG>>
+% <<Eq21.png>>
 % 
-% <<Eq22.PNG>>
+% <<Eq22.png>>
 %
 % Retomando el ejemplo anterior en el que:
 %
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Y solcitabamos el calculo de:
 % 
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 %
 % Podemos usar la regla del trapecio para hacer el calculo, en donde los
 % valores para sustituir en la expresion principal quedan de la siguiente
 % forma:
 % 
-% <<Eq23.PNG>>
+% <<Eq23.png>>
 %
-% <<Eq24.PNG>>
+% <<Eq24.png>>
 %
-% <<Eq25.PNG>>
+% <<Eq25.png>>
 %
 % Sustituyendo en la exprecion principal obtenemos lo siguiente
 %
-% <<Eq26.PNG>>
+% <<Eq26.png>>
 %
-% <<Eq27.PNG>>
+% <<Eq27.png>>
 %
-% <<Eq28.PNG>>
+% <<Eq28.png>>
 %
 %% Regla de simpson (n=2)
 %
-% <<Eq29.PNG>>
+% <<Eq29.png>>
 %
-% <<re.gif>>
+% <<re.png>>
 % 
-% <<Eq35.PNG>>
+% <<Eq35.png>>
 %
-% <<Eq36.PNG>>
+% <<Eq36.png>>
 %
-% <<Eq37.PNG>>
+% <<Eq37.png>>
 %
-% <<Eq38.PNG>>
+% <<Eq38.png>>
 %
-% <<Eq39.PNG>>
+% <<Eq39.png>>
 %
 % <<Eq40.gif>>
 %
 % Retomando el ejemplo anterior en el que:
 %
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Y solcitabamos el calculo de:
 % 
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 %
 % Podemos usar la regla de simpson para hacer el calculo, en donde los
 % valores para sustituir en la expresion principal quedan de la siguiente
 % forma:
 %
-% <<Eq23.PNG>>
+% <<Eq23.png>>
 %
-% <<Eq31.PNG>>
+% <<Eq31.png>>
 %  
-% <<Eq32.PNG>>
+% <<Eq32.png>>
 %  
 % Sustituyendo en la expresión principal, tenemos:
 %
-% <<Eq41.PNG>>
+% <<Eq41.png>>
 %
-% <<Eq42.PNG>>
+% <<Eq42.png>>
 %
-% <<Eq43.PNG>>
+% <<Eq43.png>>
 %
 %% Regla de tres octavos de Simpson (n=3)
 %
-% <<Eq44.PNG>>
+% <<Eq44.png>>
 %
-% <<Eq45.PNG>>
+% <<Eq45.png>>
 % 
-% <<Eq46.PNG>>
+% <<Eq46.png>>
 %
-% <<Eq47.PNG>>
+% <<Eq47.png>>
 %
-% <<Eq48.PNG>>
+% <<Eq48.png>>
 %
-% <<Eq49.PNG>> 
+% <<Eq49.png>> 
 %
-% <<Eq50.PNG>>
+% <<Eq50.png>>
 %
 % Retomando el ejemplo anterior en el que:
 %
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Y solcitabamos el calculo de:
 % 
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 %
 % Podemos usar la regla de simpson para hacer el calculo, en donde los
 % valores para sustituir en la expresion principal quedan de la siguiente
 % forma:
 %
-% <<Eq51.PNG>>
+% <<Eq51.png>>
 %
-% <<Eq52.PNG>>
+% <<Eq52.png>>
 %
-% <<Eq53.PNG>>
+% <<Eq53.png>>
 %
 % Sustituyendo en la Expresion principal, tenemos:
 %
-% <<Eq54.PNG>>
+% <<Eq54.png>>
 % 
-% <<Eq55.PNG>>
+% <<Eq55.png>>
 %
-% <<Eq56.PNG>>
+% <<Eq56.png>>
 %
 %% Regla compuesta del trapecio
 %
 % <<Eq57.png>>
 %
-% <<Eq58.PNG>>
+% <<Eq58.png>>
 %
 % Numero de subTrapecios
 %
-% <<Eq59.PNG>>
+% <<Eq59.png>>
 %
 % Paso
 %
-% <<Eq60.PNG>>
+% <<Eq60.png>>
 %
-% <<Eq61.PNG>>
+% <<Eq61.png>>
 %
-% <<Eq62.PNG>>
+% <<Eq62.png>>
 %
 % Retomando el ejemplo anterior en el que:
 %
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Y solcitabamos el calculo de:
 % 
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 %
 % Podemos usar la regla de Trapecios compuesta para hacer el calculo, en donde los
 % valores para sustituir en la expresion principal quedan de la siguiente
 % forma:
 %
-% <<Eq63.PNG>>
+% <<Eq63.png>>
 %
-% <<Eq64.PNG>>
+% <<Eq64.png>>
 %
-% <<Eq65.PNG>>
+% <<Eq65.png>>
 %
 % Sustituyendo en la expresion principal, se obtiene: 
 %
-% <<Eq66.PNG>>
+% <<Eq66.png>>
 %
-% <<Eq67.PNG>>
+% <<Eq67.png>>
 %
-% <<Eq68.PNG>>
+% <<Eq68.png>>
 %
 %% Regla compuesta de Simpson
 % 
-% <<Eq69.PNG>>
+% <<Eq69.png>>
 %
-% <<Eq70.PNG>>
+% <<Eq70.png>>
 %
 % n, par número de subintervalos
 %
-% <<Eq59.PNG>>
+% <<Eq59.png>>
 %
 % Paso
 %
-% <<Eq60.PNG>>
+% <<Eq60.png>>
 %
-% <<Eq61.PNG>>
+% <<Eq61.png>>
 %
-% <<Eq62.PNG>>
+% <<Eq62.png>>
 %
 % Retomando el ejemplo anterior en el que:
 %
-% <<Eq3.PNG>>
+% <<Eq3.png>>
 % 
 % Y solcitabamos el calculo de:
 % 
-% <<Eq4.PNG>>
+% <<Eq4.png>>
 %
 % Podemos usar la regla de simpson compuesta para hacer el calculo, en donde los
 % valores para sustituir en la expresion principal quedan de la siguiente
 % forma:
 %
-% <<Eq63.PNG>>
+% <<Eq63.png>>
 %
-% <<Eq64.PNG>>
+% <<Eq64.png>>
 %
-% <<Eq65.PNG>>
+% <<Eq65.png>>
 %
 % Sustituyendo en la expresion principal
 %
-% <<Eq71.PNG>>
+% <<Eq71.png>>
 %
-% <<Eq72.PNG>>
+% <<Eq72.png>>
 %
-% <<Eq68.PNG>>
+% <<Eq68.png>>
 %
 %% Cuadratura gaussiana
 %
@@ -462,13 +448,9 @@ n=-4:4;
 a=[0 -9 -6 -3 0 3 6 9 0];
 b=[0 0 4 2 0 2 4 0 0];
 convdisc([n;a],[n;b])
-%
-%
-%
+
+%%
 % <<Convolucionc_d.gif>>
-%
-%
-%
 
 %% 4.-Correlacion (c) con (d)
 % Problema 3.1.1 Lathi
@@ -482,13 +464,9 @@ n2=-4:4;
 f=[0 -9 -6 -3 0 3 6 9 0];
 g=[0 0 4 2 0 2 4 0 0];
 convdisc( [n2;f], [n2;g] )
-%
-%
-%
+
+%%
 % <<Correlacionc_d.gif>>
-%
-%
-%
 
 
 %% 5.-Convolucion de (c) con (d) usando el comando conv de MATLAB
